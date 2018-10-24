@@ -17,7 +17,7 @@ export default function searchReducer(state = initialState, action) {
             return { ...state, userData: action.payload.data, userFound: true }
 
         case `${USER_GET}_REJECTED`:
-            return { ...state, error: action.payload.response.status, userFound: false, userData: {} }
+            return { ...state, error: action.payload.response.status, userFound: false, userData: {}, reposFound: false, repoData: {} }
 
         case `${REPOS_GET}_PENDING`:
             return { ...state }

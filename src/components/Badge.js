@@ -6,11 +6,14 @@ const Badge = (props) => {
     
     return (
 
-        <div className='userBadge'>
-			<img src={avatar_url} alt="Avatar"/>
-            <p>Name: {name}</p>
-            <p>Followers: {followers}</p>
-            <p>Following: {following}</p>
+        <div className='user-badge'>
+			<img src={avatar_url} alt="Avatar" className="avatar"/>
+
+            <div className='badge-info'>
+                <h3>{name}</h3>
+                <p>Followers: {followers}</p>
+                <p>Following: {following}</p>
+            </div>
         </div>
 
     )

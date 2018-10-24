@@ -7,9 +7,12 @@ import { searchActions } from '../actions/searchActions'
 class SearchUser extends Component {
 
     submitAction = (form) => {
-        this.props.getUser(form.username)
+        
+        const { getUser, getRepos } = this.props
+
+        getUser(form.username)
             .then( (res) => {
-                this.props.getRepos(form.username)
+                getRepos(form.username)
             })
     }
 
@@ -20,20 +23,35 @@ class SearchUser extends Component {
 
         return (
 
-            <form id="search-user-form" onSubmit={ onSubmit }>
-                
-                <Field
-                    name='username'
-                    placeholder='User Name'
-                    component="input"
-                />
+            <Fragment>
 
-                <button 
-                    type="submit"
-                >Submit
-                </button>
+                <h1>Github Search</h1>
 
-            </form>
+                <form id="search-user-form" className="form" onSubmit={ onSubmit }>
+
+                    <div className='form-panel'>
+
+                        <div className="fields">
+
+                            <Field
+                                name='username'
+                                placeholder='User Name'
+                                component="input"
+                            />
+
+                            <button 
+                                className="form-button"
+                                type="submit"
+                            >Submit
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </Fragment>
 
         )
 

@@ -18,7 +18,7 @@ const RepoCardList = (props) => {
                     <ul>
                         <li>{ repo.desription }</li>
                         <li>{ repo.url }</li>
-                        <li>{ repo.stars } stars</li>
+                        <li>{ repo.stargazers_count } stars</li>
                         <li>{ repo.forks } forks</li>
                         <li>{ repo.open_issues_count } open issues</li>
                     </ul>
@@ -35,15 +35,13 @@ const RepoCardList = (props) => {
 
             <h2> Repositories </h2>
 
-            <div className='card-list'>
-                <ul>
-                    {
-                        repoData.map( (repo) => (
-                            cardList(repo)
-                        )
-                    )}
-                </ul>
-            </div>
+            <ul className='card-list'>
+                {
+                    repoData.map( (repo) => (
+                        cardList(repo)
+                    )
+                )}
+            </ul>
 
         </Fragment>
 

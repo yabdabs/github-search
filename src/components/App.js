@@ -18,11 +18,7 @@ class App extends Component {
 
 		<div className="App">
 
-			<div className='searchContainer'>
-				<h1>Github Search</h1>
-
-				<SearchUser />
-			</div>
+			<SearchUser />
 
 			{ userFound && 
 				<Badge 
