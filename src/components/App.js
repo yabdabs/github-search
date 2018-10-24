@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import SearchUser from './SearchUser'
 import Badge from './Badge'
+import RepoCardLst from './RepoCardList'
 
 import logo from '../logo.svg';
 import '../styles/App.css';
@@ -11,7 +12,7 @@ class App extends Component {
 
   render() {
 
-	const { userFound, badgeInfo } = this.props
+	const { userFound, badgeInfo, reposFound, repoData } = this.props
 
     return (
 
@@ -27,6 +28,12 @@ class App extends Component {
 				<Badge 
 					badgeInfo={ badgeInfo } 
 				/> 
+			}
+
+			{ reposFound &&
+				<RepoCardLst
+					repoData={ repoData }
+				/>
 			}
 
 		</div>
@@ -45,6 +52,8 @@ const mapStateToProps = (state) => {
 
 	return {
 		userFound: state.Search.userFound,
+		reposFound: state.Search.reposFound,
+		repoData: state.Search.repoData,
 		badgeInfo
 	}
 }
